@@ -22,7 +22,7 @@ jobs:
         run: cd starter/frontend && npm ci
       - name: Lint
         run: cd starter/frontend && npm run lint        
-        continue-on-error: true
+        continue-on-error: false
   test:
     runs-on: ubuntu-latest
     steps:
@@ -36,7 +36,7 @@ jobs:
         run: cd starter/frontend && npm ci
       - name: Run Tests
         run: cd starter/frontend && npm test
-        continue-on-error: true
+        continue-on-error: false
 
   build:
     needs: [lint, test]
